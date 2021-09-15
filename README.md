@@ -58,9 +58,9 @@
         2. As a Returning Visitor, I want to find the best way to get in contact with the site owner with any questions I may have. 
 
     -   #### Frequent User Goals
-        1. As a Frequent User, I want to check to see if there are any news and/or updates.
+        1. As a Frequent User, I want to browse the site to see if there are any news and/or updates.
         2. As a Frequent User, I want to see information about exercise and healthy food rcipes.
-        3. As a Frequent User, I want to sign up to the site Newsletter so that I am emailed new updates.
+        3. As a Frequent User, I want to sign up to the site newsletter so that I am emailed new updates.
 
 -   ### Design
     -   #### Colour Scheme
