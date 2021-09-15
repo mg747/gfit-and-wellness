@@ -99,13 +99,11 @@ body {
 }
 /* END OF PAGE Footer */
 .footer {
-    background: color #f1f1f1;
-    text-align: center;  
-    padding: 1em;
-    margin-top: 20px;
-    margin: 0 auto;
-    position: relative;
-  }
-  .footer, p {
-    text-align: center;
-  }
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: green;
+  color: white;
+  text-align: center;
+}
