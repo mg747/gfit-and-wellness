@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h2>Workout Plan</h2>
+
+    {% for exercise in exercise %}
+        {{ excercise.task_name }}<br>
+        {{ exercise.category_name }}<br>
+        {{ exercise.excercise_description }}<br>
+        {{ exercise.is_important }}<br>
+        {{ exercise.discover_more }}<br>
+    {% endfor %}
+
+{% endblock %}

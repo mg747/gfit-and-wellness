@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css" />
+    {% block styles %}
+    {% endblock %}
+    <title>Healthy Living</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+</head>
+
+<body>
+    <!-- Navigation menu -->
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+        <!-- Brand -->
+        <a class="navbar-brand" href="index.html" style="font-size: 25px;">GFIT & WELLNESS</a>
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="exercise.html">Exercise</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="diet.html">Diet</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="nutrition.html">Nutrition</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="lifestyle.html">Lifestyle</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto nav-flex-icons">
+                <li class="nav-item">
+                    <a href="https://www.twitter.com" target="_blank" class="nav-link waves-effect waves-light">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://www.facebook.com" target="_blank" class="nav-link waves-effect waves-light">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://www.instagram.com" target="_blank" class="nav-link waves-effect waves-light">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+        </div>
+    </nav>
+    <hr>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="text">
+                    <br>
+                    <h2 class="text-center" style="color:purple">Get in the zone.</h2>
+                    <h2 class="text-center" style="color:orangered">Easier than ever.</h2>
+                    <h1 style="font-size: 50px;"></h1>
+                    <p>
+                        If you enjoy the motivating and uplifting environment of group fitness classes, Gfit & Wellness
+                        of
+                        Dublin is at your service. Our elite instructors and personal trainer will guide you
+                        through workouts designed for fitness progress, weight loss, and weight gain. Our schedule
+                        rotates to include all of your
+                        favorites, such as yoga, muscle toning, indoor spin/cycling, Pilates, Cardio, strength
+                        training, BODYPUMP, Les Mills, and so much more! We welcome new members and fitness gurus into
+                        each
+                        of our classes by offering movement modifications that will challenge and accommodate every
+                        experience level. Find your next fitness class today at Gfit and Wellness Dublin.
+                    </p>
+                </div>
+            
+            <!-- End of page (footer) is used across all the pages of our website -->
+            <div class="footer">
+                <br>
+                <p>© 2021 Gfit & Wellness.</p>
+            </div>
+            {% block content %}
+    {% endblock %}
+            <!-- JS Popper -->
+            <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script
+                src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+            </script>
+            <script
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0FlPdp5mpb5g-r9nqCOm0IvuDT_ua3gI&callback=initMap&libraries=places&v=weekly"
+                async></script>
+            <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    {% block scripts %}
+    {% endblock %}
+</body>
+
+</html>

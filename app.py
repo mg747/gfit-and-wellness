@@ -18,8 +18,10 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-def hello():
-    return "Welcome to gfit world"
+@app.route("/get_exercise")
+def get_exercise():
+    exercise = mongo.db.exercise.find()
+    return render_template("exercise.html", exercise=exercise)
 
 
 if __name__ == "__main__":

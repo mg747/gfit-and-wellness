@@ -75,7 +75,7 @@
 -   #### Desktop View
 
 #### Home Page Skeleton Plane
-![Site Home Page Skeleton Plane]
+![Home Page Skeleton Plane](static/images/gfithomepagewireframe.png)
 
 #### Exercise Page Skeleton Plane
 ![Exercise Page Skeleton Plane]
