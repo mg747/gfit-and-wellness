@@ -35,6 +35,10 @@ body {
 [class*="col-"] {
     width: 100%;
 }
+.text {
+  font-family: courier new;
+  font-size: large;
+}
 /* For tablets: */
 @media only screen and (min-width: 600px){
 .col-s-1 {width: 8.33%;}
@@ -96,6 +100,44 @@ body {
     display: block;
     margin-bottom: 20px;
 }
+}
+.btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  border: 1px solid black;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+}
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color:white;
+  cursor: pointer;
+  width: 100%;
+  position: relative;
+}
+.card, text {
+  text-align: center;
+  position: relative;
+}
+.card, img {
+  width: 100%;
+}
+.card .btn:hover {
+  opacity: 0.8;
+  background-color: black;
+  color: white;
 }
 /* END OF PAGE Footer */
 .footer {
