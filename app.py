@@ -1,5 +1,5 @@
 import os
-from flask import (
+from flask import Flask (
     Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
@@ -18,10 +18,10 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/get_exercise")
+#@app.route("/get_exercise")
 def get_exercise():
     exercise = mongo.db.exercise.find()
-    return render_template("get_exercise.", exercise=exercise)
+    return render_template("diet.html")
 
 
 if __name__ == "__main__":
