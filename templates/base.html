@@ -32,25 +32,22 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link" href="{{ url_for('index') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="exercise.html">Exercise</a>
+                    <a class="nav-link" href="{{ url_for('healthy-diet') }}">Healthy Diet</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="diet.html">Diet</a>
+                    <a class="nav-link" href="{{ url_for('exercice') }}">Exercise</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="nutrition.html">Nutrition</a>
+                    <a class="nav-link" href="{{ url_for('lifestyle') }}">Lifestyle</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="lifestyle.html">Lifestyle</a>
+                    <a class="nav-link" href="{{ url_for('about') }}">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="about.html">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact</a>
+                    <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto nav-flex-icons">
@@ -90,10 +87,59 @@
                         training, BODYPUMP, Les Mills, and so much more! We welcome new members and fitness gurus into
                         each
                         of our classes by offering movement modifications that will challenge and accommodate every
-                        experience level. Find your next fitness class today at Gfit and Wellness Dublin.
+                        experience level. Find your next fitness class today at Gfit and Wellness Dublin. O
                     </p>
                 </div>
-            
+                <div class="col-sm-6">
+                    <h2 class="text-center"></h2>
+                    <!-- Image linked from www.countryandtownhouse.co.uk/ -->
+                    <img class="card-img-top"
+                        src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2020/01/ja-ma-gOUx23DNks-unsplash-782x522.jpg
+                        alt="Food">
+                </div>
+            </div>
+        <div class="container-fluid">
+            <div>
+                <h3 style="font-size:30px">Explore</h3>
+            </div>
+            <br>
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <h3></h3>
+                        <!-- Image linked from www.countryandtownhouse.co.uk/ -->
+                        <img class="card-img-top"
+                            src="https://www.countryandtownhouse.co.uk/wp-content/uploads/2019/01/BXR-BoxingGym-HD-6.jpg">
+                        <br>
+                        <h3 class="text-center"> Workout Plan</h3>
+                        <a href="workout-plan.html" class="btn btn-dark">Lean more</a>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <!-- Image linked from www.countryandtownhouse.co.uk/ -->
+                        <img class="card-img-top"
+                            src=https://images.immediate.co.uk/production/volatile/sites/30/2020/08/porridge-with-figs-7c6a726.jpg
+                            alt="Food">
+                        <br>
+                        <span class="text-center"></span>
+                        <h3 class="text-center"> Healthy Diet</h3>
+                        <a href="diet.html" class="btn btn-dark">Learn more</a>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <!-- Image linked from www.countryandtownhouse.co.uk/ -->
+                        <img class="card-img-top"
+                            src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2020/01/jesse-schoff-c0k4bkcAuMI-unsplash-783x522.jpg
+                            alt="Pool side">
+                        <br>
+                        <h3 class="text-center"> Wellness</h3>
+                        <a href="lifestyle.html" class="btn btn-dark">Learn more</a>
+                    </div>
+                </div>
+            </div>
+            <br>
             <!-- End of page (footer) is used across all the pages of our website -->
             <div class="footer">
                 <br>
