@@ -20,10 +20,11 @@
         <!-- top navbar -->
         <nav class="nav-extended text-shadow #827717 lime darken-4>
             <div class=" nav-wrapper">
-            <a href="#!" class="brand-logo">GFIT & WELLNESS</a>
+            <a href="{{ url_for('get_diet') }}" class="brand-logo">GFIT & WELLNESS</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="diet.html">Diet</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="{{ url_for('get_diet') }}">Diet</a></li>
                 <li><a href="exercise.html">Exercise</a></li>
                 <li><a href="lifestyle.html">Lifestyle</a></li>
                 <li><a href="nutritionist.html">Nutritionist</a></li>
@@ -37,7 +38,8 @@
         <!-- mobile sidenav -->
         <ul class="sidenav" id="mobile-demo">
             <li><h3 class="center-align l#827717 lime text-darken 4">GFIT & WELLNESS</h3></li>
-            <li><a href="diet.html">Diet</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="{{ url_for('get_diet') }}">Diet</a></li>
             <li><a href="exercise.html">Exercise</a></li>
             <li><a href="lifestyle.html">Lifestyle</a></li>
             <li><a href="nutritionist.html">Nutritionist</a></li>
