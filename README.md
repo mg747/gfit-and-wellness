@@ -4,7 +4,7 @@
 
 ![Site Screenshot]()
 #### Site Name: GFit & Wellness
-#### Goal : Fitness, Healthy Food and Lifestyle
+#### Goal : Fitness, Healthy Diet and Lifestyle
 
 ## Contents
 * [User Experience Design (UX)](#User-Experience-Design)
@@ -50,17 +50,17 @@
         1. As a First Time Visitor, I want to easily understand the main purpose of the site and learn more about its service.
         2. As a First Time Visitor, I want to be able to easily navigate throughout the site to find content and information.
         3. As a First Time Visitor, I want to look for testimonials to understand what other users think of the site and the service it renders. 
-        4. As a First Time Visitor, I want to sign up to the site Newsletter so that I am emailed new updates. 
+        4. As a First Time Visitor, I want to sign up to the site to enable me full access to it's service and also to recieve email newsletter and latest updates. 
 
     -   #### Returning Visitor Goals
 
         1. As a Returning Visitor, I want to see information about the most new/recent workout plan and healthy food recipes.
-        2. As a Returning Visitor, I want to find the best way to get in contact with the site owner with any questions I may have. 
+        2. As a Returning Visitor, I want to find the best way to get in contact with the site owner with any questions I may have.
+        3. As a Frequent User, I want to be able to login to the site to create or add my own recipe. 
 
     -   #### Frequent User Goals
-        1. As a Frequent User, I want to browse the site to see if there are any news and/or updates.
-        2. As a Frequent User, I want to see information about exercise and healthy food rcipes.
-        3. As a Frequent User, I want to sign up to the site newsletter so that I am emailed new updates.
+        1. As a Frequent User, I want to browse the site to see if there are any changes, news and/or updates.
+        2. As a Frequent User, I want to see information about the most new/recent workout plan and healthy diet recipes.
 
 -   ### Design
     -   #### Colour Scheme
@@ -159,11 +159,11 @@
 
 ### Frameworks, Libraries & Programs Used
 
-1. [Bootstrap 4.6:](https://getbootstrap.com/docs/4.6/getting-started/introduction/)
-    - Bootstrap was used to assist with the responsiveness and styling of the website.
+1. [Materialize 1.0.0:](https://materialize.css/)
+    - Materialize was used to assist with the responsiveness and styling of the website.
 2. [Hover.css:](https://ianlunn.github.io/Hover/)
     - Hover.css was used on the Social Media icons in the footer to add the float transition while being hovered over.
-3. [Font Awesome 4.7:](https://fontawesome.com/)
+3. [Font Awesome 5.13.1:](https://fontawesome.com/)
     - Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.
 4. [jQuery:](https://jquery.com/)
     - jQuery came with Bootstrap to make the navbar responsive but was also used for the smooth scroll function in JavaScript.
@@ -208,9 +208,9 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 -   #### Returning Visitor Goals
 
-    1. As a Returning Visitor, I want to see information about exercise and healthy food rcipes.
+    1. As a Returning Visitor, I want to see information about exercise and healthy food recipes.
 
-      1. This information is on the home page of the site underneath the navbar 
+      1. This information is on the home page of the site or the user can access it through the navbar menu link for exercise 
     
     2. As a Returning Visitor, I want to find the best way to get in contact with the site owner with any questions I may have.
 
@@ -218,9 +218,9 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 -   #### Frequent User Goals
 
-    1. As a Frequent User, I want to see updates.
+    1. As a Frequent User, I want to see updates about any change or news on the site.
 
-      1. This information is on the home page of the site underneath the navbar
+      1. This information can be found on the home page of the site.
 
     2. As a Frequent User, I want to check to see if there are any new blog posts.
 
@@ -291,9 +291,9 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 ### Code
 
--   The javacript code for email.js and the parts of the google map api was copied and modified from the Interactive Frontend Develeopment lesson of the course.
+-   Codes were copied and modified from the Interactive Backend Develeopment Mini Project of the course.
 
--   Bootstrap Library was used throughout the project mainly to make site responsive using the Bootstrap Grid System [Bootstrap4.6](https://getbootstrap.com/docs/4.6/getting-started/introduction/)
+-   Materialize template was used throughout the project mainly to make site responsive using the [materialize 1.0.0](https://materializecss.com/)
 
 ### Content
 
