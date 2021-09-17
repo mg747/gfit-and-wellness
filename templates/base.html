@@ -18,7 +18,7 @@
 <body>
     <header>
         <!-- top navbar -->
-        <nav class="nav-extended text-shadow #827717 lime darken-4>
+        <nav class="nav-extended text-shadow #bcaaa4 brown lighten-3 darken-4>
             <div class=" nav-wrapper">
             <a href="{{ url_for('get_diet') }}" class="brand-logo">GFIT & WELLNESS</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
@@ -31,13 +31,13 @@
                 <li><a href="personal-trainer.html">Personal Trainer</a></li>
                 <li><a href="#">Log out</a></li>
                 <li><a href="#">Log In</a></li>
-                <li><a href="#">Register</a></li>
+                <li><a href="{{ url_for('register') }}">Register</a></li>
             </ul>
             </div>
         </nav>
         <!-- mobile sidenav -->
         <ul class="sidenav" id="mobile-demo">
-            <li><h3 class="center-align l#827717 lime text-darken 4">GFIT & WELLNESS</h3></li>
+            <li><h4 class="center-align #bcaaa4 brown lighten-3 text-darken 4">GFIT & WELLNESS</h4></li>
             <li><a href="#">Profile</a></li>
             <li><a href="{{ url_for('get_diet') }}">Diet</a></li>
             <li><a href="exercise.html">Exercise</a></li>
@@ -46,7 +46,7 @@
             <li><a href="personal-trainer.html">Personal Trainer</a></li>
             <li><a href="#">Log out</a></li>
             <li><a href="#">Log In</a></li>
-            <li><a href="#">Register</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
         </ul>
     </header>
 
