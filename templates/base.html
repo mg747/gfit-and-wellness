@@ -16,49 +16,202 @@
 </head>
 
 <body>
-    <header>
-        <!-- top navbar -->
-        <nav class="nav-extended text-shadow #bcaaa4 brown lighten-3 darken-4>
+       <!-- top navbar -->
+        <nav class="nav-extended text-shadow #827717 lime darken-4">
             <div class=" nav-wrapper">
-            <a href="{{ url_for('get_diet') }}" class="brand-logo">GFIT & WELLNESS</a>
+            <a href="{{ url_for('index') }}" class="brand-logo" style="font-size: 25px;">GFIT & WELLNESS</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="#">Profile</a></li>
-                <li><a href="{{ url_for('get_diet') }}">Diet</a></li>
-                <li><a href="exercise.html">Exercise</a></li>
-                <li><a href="lifestyle.html">Lifestyle</a></li>
-                <li><a href="nutritionist.html">Nutritionist</a></li>
-                <li><a href="personal-trainer.html">Personal Trainer</a></li>
-                <li><a href="#">Log out</a></li>
-                <li><a href="#">Log In</a></li>
+                <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                <li><a href="{{ url_for('diet') }}">Diet</a></li>
+                <li><a href="{{ url_for('exercise') }}">Exercise</a></li>
+                <li><a href="{{ url_for('lifestyle') }}">Lifestyle</a></li>
+                <li><a href="{{ url_for('nutritionist') }}">Nutritionist</a></li>
+                <li><a href="{{ url_for('personal_trainer') }}">Personal Trainer</a></li>
+                <li><a href="{{ url_for('logout') }}">Log out</a></li>
+                <li><a href="{{ url_for('login') }}">Log In</a></li>
                 <li><a href="{{ url_for('register') }}">Register</a></li>
             </ul>
             </div>
         </nav>
-        <!-- mobile sidenav -->
-        <ul class="sidenav" id="mobile-demo">
-            <li><h4 class="center-align #bcaaa4 brown lighten-3 text-darken 4">GFIT & WELLNESS</h4></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="{{ url_for('get_diet') }}">Diet</a></li>
-            <li><a href="exercise.html">Exercise</a></li>
-            <li><a href="lifestyle.html">Lifestyle</a></li>
-            <li><a href="nutritionist.html">Nutritionist</a></li>
-            <li><a href="personal-trainer.html">Personal Trainer</a></li>
-            <li><a href="#">Log out</a></li>
-            <li><a href="#">Log In</a></li>
-            <li><a href="#">Register</a></li>
-        </ul>
-    </header>
-
+        <!-- Page Header -->
+        <header class="masthead" style="background-image: url('https://www.countryandtownhouse.co.uk/wp-content/uploads/2019/01/E-by-Equinox-Strength-Floor-Stairwell.jpg')">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                        <div class="site-heading" style="font-size: 35px;">
+                            <p class="center-align">Living healthy!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
     {% block content %}
     {% endblock %}
-
+    <div class="carousel carousel-slider center">
+        <div class="carousel-fixed-item center">
+          <a class="btn waves-effect white grey-text darken-text-2">button</a>
+        </div>
+        <div class="carousel-item black white-text" href="#one!">
+            <h4>Train in one of our fitness studio</h4>
+            <small>Please continue to follow COVID-19 <a href="https://www.hse.ie/" target="_blank">Public Guidelines.</a></small>
+            <img class="card-img-top" src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2020/12/sculpt-bands-option-2.jpg alt="Workout">
+        </div>
+        <div class="carousel-item amber white-text" href="#two!">
+            <p class="white-text"><img class="card-img-top" src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2019/10/BarreChallenge5.jpg alt="Workout"></p>
+        </div>
+        <div class="carousel-item green white-text" href="#three!">
+          <h2></h2>
+          <p class="white-text"></p>
+        </div>
+        <div class="carousel-item blue white-text" href="#four!">
+          <h2></h2>
+          <p class="white-text"></p>
+        </div>
+      </div>
+      <!-- Card Elements -->
+      <div class="row">
+        <h4 class="center-align">Healthy Diet</h4>
+        <div class="column">
+          <div class="card">
+            <!-- Image linked from https://theculturetrip.com/-->
+            <img class="card-img-top" src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2020/02/Daylesford-Delivered-Ready-To-Serve-food-for-events-783x522.gif alt="Food Menu">
+            <br>
+            <a href="recipe.html" target="_blank" class="btn btn-dark">Explore</a>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <!-- Image linked from https://theculturetrip.com/-->
+            <img class="card-img-bottom" src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2020/07/rumman-amin-LNn6O_Mt730-unsplash.jpg alt="Food Menu">
+            <br>
+            <a href="asia.html" target="_blank" class="btn btn-dark">Explore</a>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <!-- Image linked from https://theculturetrip.com/-->
+            <img class="card-img-top" src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2021/09/%C2%A9-Safia-Shakarchi-Deliciously-Ella-Restaurant-37-783x522.jpg alt="Food Menu">
+            <br>
+            <a href="australia.html" target="_blank" class="btn btn-dark">Explore</a>
+          </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="row">
+            <h4 class="center-align">Workout Plan</h4>
+            <div class="column">
+              <div class="card">
+                <!-- Image linked from https://theculturetrip.com/-->
+                <img class="card-img-top" src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2021/05/Karve-Club-2.jpg alt="Fitness">
+                <br>
+                <a href="recipe.html" target="_blank" class="btn btn-dark">Explore</a>
+              </div>
+            </div>
+            <div class="column">
+              <div class="card">
+                <!-- Image linked from https://theculturetrip.com/-->
+                <img class="card-img-bottom" src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2021/03/Duco.jpg alt="Fitness">
+                <br>
+                <a href="asia.html" target="_blank" class="btn btn-dark">Explore</a>
+              </div>
+            </div>
+            <div class="column">
+              <div class="card">
+                <!-- Image linked from https://theculturetrip.com/-->
+                <img class="card-img-top" src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2019/03/FLY_Flow_03.jpg alt="Yoga">
+                <br>
+                <a href="australia.html" target="_blank" class="btn btn-dark">Explore</a>
+              </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            <!-- Accordion -->
+            <div class="container-fluid">
+            <ul class="collapsible">
+                <li>
+                  <div class="collapsible-header"><i class="material-icons"></i>SET A GOAL</div>
+                  <div class="collapsible-body"><span>Build your own energy.</span></div>
+                </li>
+                <li>
+                  <div class="collapsible-header"><i class="material-icons"></i>Lose Weight</div>
+                  <div class="collapsible-body"><span></span>Super effective intense workout for weight loss. You can burn calories all day long!</div>
+                </li>
+                <li>
+                  <div class="collapsible-header"><i class="material-icons"></i>Abs</div>
+                  <div class="collapsible-body"><span>x 20 Sit-Ups</span></div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons"></i>Chest</div>
+                    <div class="collapsible-body"><span>00:30 Jumping Jacks</span></div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header"><i class="material-icons"></i>Leg</div>
+                    <div class="collapsible-body"><span>x 14 Burpees</span></div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header"><i class="material-icons"></i>Stretch</div>
+                    <div class="collapsible-body"><span>x 14 Squats</span></div>
+                  </li>
+              </ul>
+              </div>
+            <!-- Media -->  
+            <div class="container-fluid">
+                <div class="col s12 m8 offset-m2 l6 offset-l3">
+                    <div class="card-panel grey lighten-5 z-depth-1">
+                      <div class="row valign-wrapper">
+                        <div class="col s2">
+                          <img src="https://www.countryandtownhouse.co.uk/wp-content/uploads/2021/07/lesly-juarez-1AhGNGKuhR0-unsplash-783x522.jpg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+                        </div>
+                        <div class="col s10">
+                          <span class="black-text">
+                            Gfit and wellness has helped me to transform my life.
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+    <!-- End of page (footer) is used across all the pages of our website -->
+<div class="container-fluid">
+<footer class="page-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">Social Media:</h5>
+              <p class="grey-text text-lighten-3">Twitter</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+              <h5 class="white-text">Company</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Contact us</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Terms of service</a</li>
+                <li><a class="grey-text text-lighten-3" href="#!">Privacy policy</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">FAQ</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+    <div class="container-fluid">
+        <p class="copyright text-muted">Copyright &copy; Gfit & Wellness. <span id="copyright"></span> All Rights Reserved.</p>
+    </div>
+</footer>
+</div>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     {% block scripts %}
     {% endblock %}
+    <script>
+        $("#copyright").text(new Date().getFullYear());
+    </script>
 </body>
 
 </html>
