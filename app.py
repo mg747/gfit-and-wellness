@@ -4,7 +4,6 @@ from flask import (
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
@@ -17,15 +16,62 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-# Diet and recipe section
+
 @app.route("/")
-@app.route("/get_diet")
-def get_diet():
-    diet = mongo.db.diet.find()
-    return render_template("diet.html", diet=diet)
+def index():
+    return render_template("index.html")
+
+@app.route("/")
+def Levitate():
+    return "Living Healthy!"
+
+
+@app.route("/profile")
+def profile():
+    return render_template("profile.html")
+
+
+@app.route("/diet")
+def diet():
+    return render_template("diet.html")
+
+
+@app.route("/exercise")
+def exercise():
+    return render_template("exercise.html")
+
+
+@app.route("/lifestyle")
+def lifestyle():
+    return render_template("lifestyle.html")
+
+
+@app.route("/nutritionist")
+def nutritionist():
+    return render_template("nutritionist.html")
+
+
+@app.route("/personal-trainer")
+def personal_trainer():
+    return render_template("personal-trainer.html")
+
+
+@app.route("/logout")
+def logout():
+    return render_template("logout.html")
+
+
+@app.route("/login")
+def login():
+    return render_template("login.html")
+
+
+@app.route("/register")
+def register():
+    return render_template("register.html")
 
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
-            port=int(os.environ.get("PORT")),
-            debug=True)
+    port=int(os.environ.get("PORT")),
+    debug=True)
