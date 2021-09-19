@@ -1,7 +1,24 @@
 {% extends "base.html" %}
-    {% for diet in diet %}
-    {{ diet.diet_name }}<br>
-    {{ diet.description }}<br>
-    {{ diet.prep_time }}<br>
-    {{ diet.cook_time }}<br>
-    {% endfor %}
+{% block content %}
+
+<div class="container-fluid">
+<div class="row">
+    <div class="col-sm-6">
+        <img src="{{ member.image_source }}" alt="Profile image for {{ member.name }}"> 
+    </div>
+
+    <div class="col-sm-6">
+        <p>{{ diet.description}}</p>
+    </div>
+
+</div>
+</div>
+{% for diet in diet %}
+{% for diet in diet %}
+{{ diet.diet_name }}<br>
+{{ diet.description }}<br>
+{{ diet.prep_time }}<br>
+{{ diet.cook_time }}<br>
+
+
+{% endfor %}
