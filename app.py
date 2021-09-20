@@ -20,20 +20,16 @@ mongo = PyMongo(app)
 @app.route("/")
 def index():
     return render_template("index.html")
-
-@app.route("/")
-def Levitate():
-    return "Living Healthy!"
-
+    
 
 @app.route("/profile")
 def profile():
     return render_template("profile.html")
 
 
-@app.route("/diet")
-def diet():
-    return render_template("diet.html")
+@app.route("/diets")
+def diets():
+    return render_template("diets.html")
 
 
 @app.route("/exercise")
