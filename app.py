@@ -31,6 +31,11 @@ def profile(username):
         {"username": session["user"]})["username"]
     return render_template("profile.html", username=username)
 
+    if session["user"]:
+        return render_template("profile.html", username=username)
+
+    return redirect(url_for("login"))
+
 
 # Diet Section
 @app.route("/diets")
@@ -63,10 +68,12 @@ def personal_trainer():
     return render_template("personal-trainer.html")
 
 
-# Logout
 @app.route("/logout")
 def logout():
-    return render_template("logout.html")
+    # remove user from session cookie
+    flash("You have been logged out")
+    session.pop("user")
+    return redirect(url_for("login"))
 
 
 # Login
