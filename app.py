@@ -29,7 +29,8 @@ def profile():
 
 @app.route("/diets")
 def diets():
-    return render_template("diets.html")
+    diets = mongo.db.diets.find()
+    return render_template("diets.html", diets=diets)
 
 
 @app.route("/exercise")
