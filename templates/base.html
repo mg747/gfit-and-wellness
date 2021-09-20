@@ -16,11 +16,12 @@
 </head>
 
 <body>
+  <header class="masthead" style="background-image: url('https://www.countryandtownhouse.co.uk/wp-content/uploads/2019/01/E-by-Equinox-Strength-Floor-Stairwell.jpg')">
        <!-- top navbar -->
         <nav class="nav-extended text-shadow #827717 lime darken-4">
             <div class=" nav-wrapper">
             <a href="{{ url_for('index') }}" class="brand-logo" style="font-size: 25px;">GFIT & WELLNESS</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('profile') }}">Profile</a></li>
                 <li><a href="{{ url_for('diets') }}">Diet</a></li>
@@ -34,8 +35,18 @@
             </ul>
             </div>
         </nav>
+        <ul class="sidenav" id="mobile-demo">
+          <li><a href="{{ url_for('profile') }}">Profile</a></li>
+          <li><a href="{{ url_for('diets') }}">Diet</a></li>
+          <li><a href="{{ url_for('exercise') }}">Exercise</a></li>
+          <li><a href="{{ url_for('lifestyle') }}">Lifestyle</a></li>
+          <li><a href="{{ url_for('nutritionist') }}">Nutritionist</a></li>
+          <li><a href="{{ url_for('personal_trainer') }}">Personal Trainer</a></li>
+          <li><a href="{{ url_for('logout') }}">Log out</a></li>
+          <li><a href="{{ url_for('login') }}">Log In</a></li>
+          <li><a href="{{ url_for('register') }}">Register</a></li>
+      </ul>
         <!-- Page Header -->
-        <header class="masthead" style="background-image: url('https://www.countryandtownhouse.co.uk/wp-content/uploads/2019/01/E-by-Equinox-Strength-Floor-Stairwell.jpg')">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row">
@@ -71,10 +82,14 @@
         </div>
       </div>
       <!-- Card Elements -->
+      <div class="container-fluid" style="background-color: #fff8e1">
+        <br>
       <div class="row">
         <h4 class="center-align">Healthy Diet</h4>
+        <br>
         <div class="column">
           <div class="card">
+            <h5>Mediterranean</h5>
             <!-- Image linked from https://theculturetrip.com/-->
             <img class="card-img-top" src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2020/02/Daylesford-Delivered-Ready-To-Serve-food-for-events-783x522.gif alt="Food Menu">
             <br>
@@ -83,6 +98,7 @@
         </div>
         <div class="column">
           <div class="card">
+            <h5>Paleo</h5>
             <!-- Image linked from https://theculturetrip.com/-->
             <img class="card-img-bottom" src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2020/07/rumman-amin-LNn6O_Mt730-unsplash.jpg alt="Food Menu">
             <br>
@@ -91,17 +107,22 @@
         </div>
         <div class="column">
           <div class="card">
+            <h5>Vegan</h5>
             <!-- Image linked from https://theculturetrip.com/-->
             <img class="card-img-top" src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2021/09/%C2%A9-Safia-Shakarchi-Deliciously-Ella-Restaurant-37-783x522.jpg alt="Food Menu">
             <br>
-            <a href="australia.html" target="_blank" class="btn btn-dark">Explore</a>
+            <a href="diets.html" target="_blank" class="btn btn-dark">Explore</a>
           </div>
+          <h4 class="center-align">1</h4>
+        <h4 class="center-align">2</h4>
         </div>
         </div>
         </div>
-        </div>
+        <div class="container-fluid" style="background-color: #8d6e63;">
+          <br>
         <div class="row">
             <h4 class="center-align">Workout Plan</h4>
+            <br>
             <div class="column">
               <div class="card">
                 <!-- Image linked from https://theculturetrip.com/-->
@@ -125,7 +146,8 @@
                 <br>
                 <a href="australia.html" target="_blank" class="btn btn-dark">Explore</a>
               </div>
-            </div>
+              <h4 class="center-align">1</h4>
+        <h4 class="center-align">2</h4>
             </div>
             </div>
             </div>
