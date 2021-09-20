@@ -23,37 +23,47 @@ def index():
     return render_template("index.html")
     
 
-@app.route("/profile")
-def profile():
-    return render_template("profile.html")
+# Profile
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    # grab the session user's username from db
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    return render_template("profile.html", username=username)
 
 
+# Diet Section
 @app.route("/diets")
 def diets():
     diets = mongo.db.diets.find()
     return render_template("diets.html", diets=diets)
 
 
+# Exercise Section
 @app.route("/exercise")
 def exercise():
     return render_template("exercise.html")
 
 
+# Lifestyle Section
 @app.route("/lifestyle")
 def lifestyle():
     return render_template("lifestyle.html")
 
 
+# Nutritionist
 @app.route("/nutritionist")
 def nutritionist():
     return render_template("nutritionist.html")
 
 
+# Personal Trainer
 @app.route("/personal-trainer")
 def personal_trainer():
     return render_template("personal-trainer.html")
 
 
+# Logout
 @app.route("/logout")
 def logout():
     return render_template("logout.html")
@@ -73,6 +83,8 @@ def login():
                 existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(request.form.get("username")))
+                return redirect(url_for(
+                    "profile", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -107,6 +119,8 @@ def register():
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
+        return redirect(url_for("profile", username=session["user"]))
+
     return render_template("register.html")
 
 
