@@ -6,6 +6,27 @@
 {{ diet.prep_time }}<br>
 {{ diet.cook_time }}<br>
 {% endfor %}
+<!-- Accordion -->
+<ul class="collapsible">
+    <li>
+        <div class="collapsible-header white-text #000000 black darken-4 text-shadow">Recipe</div>
+    </li>
+    <li>
+        <div class="collapsible-header white-text #827717 lime darken-4 text-shadow"><i
+                class="fas fa-caret-down"></i>Ingredients</div>
+        <div class="collapsible-body"><span></span>0</div>
+    </li>
+    <li>
+        <div class="collapsible-header white-text #827717 lime darken-4 text-shadow"><i
+                class="fas fa-caret-down"></i>Prep Time</div>
+        <div class="collapsible-body"><span></span>0</div>
+    </li>
+    <li>
+        <div class="collapsible-header white-text #827717 lime darken-4 text-shadow"><i
+                class="fas fa-caret-down"></i>Cook Time</div>
+        <div class="collapsible-body"><span></span>0</div>
+    </li>
+</ul>
 
 
 {% endblock %}
