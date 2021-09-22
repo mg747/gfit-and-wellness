@@ -44,6 +44,28 @@ def diets():
     return render_template("diets.html", diets=diets)
 
 
+# Add Recipe
+@app.route("/add_recipe", methods=["GET", "POST"])
+def add_recipe():
+    if request.method == "POST":
+        is_urgent = "on" if request.form.get("is_urgent") else "off"
+        recipe = {
+            "category_name": request.form.get("category_name"),
+            "diet_name": request.form.get("diet_name"),
+            "diet_description": request.form.get("diet_description"),
+            "ingredients": request.form.get("ingredients"),
+            "prep_time": request.form.get("prep_time"),
+            "cook_time": request.form.get("cook_time"),
+            "created_by": session["user"]
+        }
+        mongo.db.diets.insert_one(recipe)
+        flash("Recipe Successfully Added")
+        return redirect(url_for("get_diets"))
+
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("add_recipe.html", categories=categories)
+
+
 # Exercise Section
 @app.route("/exercise")
 def exercise():
@@ -54,12 +76,6 @@ def exercise():
 @app.route("/lifestyle")
 def lifestyle():
     return render_template("lifestyle.html")
-
-
-# Nutritionist
-@app.route("/nutritionist")
-def nutritionist():
-    return render_template("nutritionist.html")
 
 
 # Personal Trainer
