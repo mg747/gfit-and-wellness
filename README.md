@@ -2,8 +2,8 @@
 
 [View the live project here.](https://mg747.github.io/gfit-and-wellness/)
 
-![Site Screenshot]()
-#### Site Name: GFit & Wellness
+![Site Screenshot](static/images/websitescreenshot.png)
+#### Site Name: Fit Hub
 #### Goal : Fitness, Healthy Diet and Lifestyle
 
 ## Contents
@@ -77,70 +77,39 @@
 #### Home Page Skeleton Plane
 ![Home Page Skeleton Plane](static/images/gfithomepagewireframe.png)
 
+#### Diet Page Skeleton Plane
+![diet Page Skeleton Plane]
+
+#### Recipe Page Skeleton Plane
+![Recipe Page Skeleton Plane]
+
 #### Exercise Page Skeleton Plane
 ![Exercise Page Skeleton Plane]
-
-#### Workout Plan Page Skeleton Plane
-![Workout Plan Page Skeleton Plane]
-
-#### Personal Trainer Page Skeleton Plane
-![Personal Trainer Page Skeleton Plane]
-
-#### Diet Page Skeleton Plane
-![Diet Page Skeleton Plane]
-
-#### Healthy Food and Recipes Page Skeleton Plane
-![Healthy Food and Recipes Page Skeleton Plane]
-
-#### Nutrition Page Skeleton Plane
-![Nutrition Page Skeleton Plane]
-
-#### Lifestyle Us Page Skeleton Plane
-![Lifestyle Page Skeleton Plane]
 
 #### About Page Skeleton Plane
 ![About Page Skeleton Plane]
 
 #### Contact Page Skeleton Plane
 ![Contact Page Skeleton Plane]
-
-#### FAQ Page Skeleton Plane
-![FAQ Page Skeleton Plane]
 
 -   #### Mobile View
-
 #### Home Page Skeleton Plane
-![Site Home Page Skeleton Plane]
-
-#### Exercise Page Skeleton Plane
-![Exercise Page Skeleton Plane]
-
-#### Workout Plan Page Skeleton Plane
-![Workout Plan Page Skeleton Plane]
-
-#### Personal Trainer Page Skeleton Plane
-![Personal Trainer Page Skeleton Plane]
+![Home Page Skeleton Plane]
 
 #### Diet Page Skeleton Plane
 ![Diet Page Skeleton Plane]
 
-#### Healthy Food and Recipes Page Skeleton Plane
-![Healthy Food and Recipes Page Skeleton Plane]
+#### Recipe Page Skeleton Plane
+![Recipe Page Skeleton Plane]
 
-#### Nutrition Page Skeleton Plane
-![Nutrition Page Skeleton Plane]
-
-#### Lifestyle Us Page Skeleton Plane
-![Lifestyle Page Skeleton Plane]
+#### Exercise Page Skeleton Plane
+![Exercise Page Skeleton Plane]
 
 #### About Page Skeleton Plane
 ![About Page Skeleton Plane]
 
 #### Contact Page Skeleton Plane
 ![Contact Page Skeleton Plane]
-
-#### FAQ Page Skeleton Plane
-![FAQ Page Skeleton Plane]
 
 ## Features
 
@@ -195,16 +164,16 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
     1. As a First Time Visitor, I want to easily understand the main purpose of the site and learn more about its service.
 
-      1. Upon entering the site, users are automatically greeted with a clean and easily readable navigation bar
+      1. Upon entering the site, users are automatically greeted with a clean and easily readable navigation bar.
       2. The main points are made immediately with the links on the navbar and the interesting contents and information on the homepage.
 
     2. As a First Time Visitor, I want to easily be able to navigate throughout the site to find content.
 
-      1. The site has been designed to be fluid and never to entrap the user. At the top of each page there is a clean navigation bar, each link describes what page they will end up at clearly.
+      1. The site has been designed to be fluid and never to entrap the user. At the top of each page there is a clean navigation bar, each link describes what page they will end up at clearly. ![](static/images/screenshot1.png)
 
     3. As a First Time Visitor, I want to locate the site social media links to see past and present post about the site service.
        
-      1. The social media links is on the navbar on every page of the site.
+      1. The social media links is on the footer on every page of the site. ![](static/images/screenshot2.png)
 
 -   #### Returning Visitor Goals
 
