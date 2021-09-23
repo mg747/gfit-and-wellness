@@ -22,17 +22,25 @@ body {
 @media screen and (max-width: 943px){
 }
 /* Navigation bar styling */
-.navbar {
+.nav {
   font-weight: bold;
   font-size: larger;
   text-align: center;
 }
-.navbar, ul li {
+.nav, ul li {
+  font-size: larger;
   float: none;
 }
 .site-heading {
   color: aqua;
   font-family: courier new;
+}
+.checked {
+  color: orange;
+}
+.input-field select#category_name {
+  display: block;
+
 }
 .responsive {
   max-width: 100%;

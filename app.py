@@ -17,7 +17,6 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -38,32 +37,36 @@ def profile(username):
 
 
 # Diet Section
-@app.route("/diets")
-def diets():
+@app.route("/get_diets")
+def get_diets():
     diets = mongo.db.diets.find()
+    return render_template("diets.html", diets=diets)
+
+
+# Search Index
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    diets = list(mongo.db.diets.find({"$text": {"$search": query}}))
     return render_template("diets.html", diets=diets)
 
 
 # Add Recipe
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
+    # Save Recipe    
     if request.method == "POST":
-        is_urgent = "on" if request.form.get("is_urgent") else "off"
-        recipe = {
+        diet = {
             "category_name": request.form.get("category_name"),
             "diet_name": request.form.get("diet_name"),
             "diet_description": request.form.get("diet_description"),
-            "ingredients": request.form.get("ingredients"),
-            "prep_time": request.form.get("prep_time"),
-            "cook_time": request.form.get("cook_time"),
-            "created_by": session["user"]
         }
-        mongo.db.diets.insert_one(recipe)
-        flash("Recipe Successfully Added")
+        mongo.db.diets.insert_one(diet)
+        flash("New Diet Added")
         return redirect(url_for("get_diets"))
-
-    categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("add_recipe.html", categories=categories)
+    else:
+        categories = mongo.db.categories.find().sort("category_name", 1)
+        return render_template("add_recipe.html", categories=categories)
 
 
 # Exercise Section
