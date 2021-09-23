@@ -2,55 +2,36 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
-        integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA=="
-        crossorigin="anonymous" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-        type="text/css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
-    {% block styles %}
-    {% endblock %}
-    <title>Healthy Living</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+    integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA=="
+    crossorigin="anonymous" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    type="text/css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+  {% block styles %}
+  {% endblock %}
+  <title>Healthy Living</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 </head>
 
 <body>
-  <header class="masthead" style="background-image: url('https://www.countryandtownhouse.co.uk/wp-content/uploads/2019/01/E-by-Equinox-Strength-Floor-Stairwell.jpg')">
-       <!-- top navbar -->
-        <nav class="nav-extended text-shadow N/A transparent">
-          <div class=" nav-wrapper">
-            <a href="{{ url_for('index') }}" class="brand-logo" style="font-size: 25px;">GET FIT</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
-            <ul class="right hide-on-med-and-down">
-              <li><a href="{{ url_for('index') }}">Home</a></li>
-              {% if session.user %}
-              <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-              <li><a href="{{ url_for('diets') }}">Diet</a></li>
-              <li><a href="{{ url_for('add_recipe') }}">Recipe</a></li>
-              <li><a href="{{ url_for('exercise') }}">Exercise</a></li>
-              <li><a href="{{ url_for('lifestyle') }}">Lifestyle</a></li>
-              <li><a href="{{ url_for('personal_trainer') }}">Personal Trainer</a></li>
-              {% if session.user|lower == "admin"|lower %}
-              <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
-              {% endif %}
-              <li><a href="{{ url_for('logout') }}">Log out</a></li>
-              {% else %}
-              <li><a href="{{ url_for('login') }}">Log In</a></li>
-              <li><a href="{{ url_for('register') }}">Register</a></li>
-              {% endif %}
-            </ul>
-          </div>
-        </nav>
-        <ul class="sidenav" id="mobile-demo">
+  <header class="masthead"
+    style="background-image: url('https://www.countryandtownhouse.co.uk/wp-content/uploads/2019/01/E-by-Equinox-Strength-Floor-Stairwell.jpg')">
+    <!-- top navbar -->
+    <nav class="nav-extended text-shadow N/A transparent">
+      <div class=" nav-wrapper">
+        <a href="{{ url_for('index') }}" class="brand-logo" style="font-size: 35px;">FIT HUB</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+        <ul class="right hide-on-med-and-down">
           <li><a href="{{ url_for('index') }}">Home</a></li>
           {% if session.user %}
           <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-          <li><a href="{{ url_for('diets') }}">Diet</a></li>
+          <li><a href="{{ url_for('get_diets') }}">Diet</a></li>
           <li><a href="{{ url_for('add_recipe') }}">Recipe</a></li>
           <li><a href="{{ url_for('exercise') }}">Exercise</a></li>
-          <li><a href="{{ url_for('lifestyle') }}">Lifestyle</a></li>
-          <li><a href="{{ url_for('personal_trainer') }}">Personal Trainer</a></li>
           {% if session.user|lower == "admin"|lower %}
           <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
           {% endif %}
@@ -60,222 +41,250 @@
           <li><a href="{{ url_for('register') }}">Register</a></li>
           {% endif %}
         </ul>
-        <!-- Page Header -->
-            <div class="overlay"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-md-10 mx-auto">
-                        <div class="site-heading" style="font-size: 35px;">
-                            <p class="center-align">Living healthy!</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <section>
-          <!-- flash messages -->
-          {% with messages = get_flashed_messages() %}
-              {% if messages %}
-                  {% for message in messages %}
-                      <div class="row flashes">
-                          <h4 class="light-blue lighten-4 center-align">{{ message }}</h4>
-                      </div>
-                  {% endfor %}
-              {% endif %}
-          {% endwith %}
-      </section>
-    {% block content %}
-    {% endblock %}
-    <div class="carousel carousel-slider center">
-        <div class="carousel-fixed-item center">
-          <a class="btn waves-effect white grey-text darken-text-2">button</a>
-        </div>
-        <div class="carousel-item black white-text" href="#one!">
-            <h4>Train in one of our fitness studio</h4>
-            <small>Please continue to follow COVID-19 <a href="https://www.hse.ie/" target="_blank">Public Guidelines.</a></small>
-            <img class="card-img-top" src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2020/12/sculpt-bands-option-2.jpg alt="Workout">
-        </div>
-        <div class="carousel-item amber white-text" href="#two!">
-            <p class="white-text"><img class="card-img-top" src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2019/10/BarreChallenge5.jpg alt="Workout"></p>
-        </div>
-        <div class="carousel-item green white-text" href="#three!">
-          <h2></h2>
-          <p class="white-text"></p>
-        </div>
-        <div class="carousel-item blue white-text" href="#four!">
-          <h2></h2>
-          <p class="white-text"></p>
+      </div>
+    </nav>
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="{{ url_for('index') }}">Home</a></li>
+      {% if session.user %}
+      <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+      <li><a href="{{ url_for('get_diets') }}">Diet</a></li>
+      <li><a href="{{ url_for('add_recipe') }}">Recipe</a></li>
+      <li><a href="{{ url_for('exercise') }}">Exercise</a></li>
+      {% if session.user|lower == "admin"|lower %}
+      <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
+      {% endif %}
+      <li><a href="{{ url_for('logout') }}">Log out</a></li>
+      {% else %}
+      <li><a href="{{ url_for('login') }}">Log In</a></li>
+      <li><a href="{{ url_for('register') }}">Register</a></li>
+      {% endif %}
+    </ul>
+    <!-- Page Header -->
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading" style="font-size: 35px;">
+            <p class="center-align">Living healthy!</p>
+          </div>
         </div>
       </div>
-      <!-- Card Elements -->
-      <div class="container-fluid" style="background-color: #fff8e1">
+    </div>
+  </header>
+  <section>
+    <!-- flash messages -->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="row flashes">
+      <h4 class="light-blue lighten-4 center-align">{{ message }}</h4>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+  </section>
+  {% block content %}
+  {% endblock %}
+  <div class="carousel carousel-slider center">
+    <div class="carousel-fixed-item center">
+      <a href="{{ url_for('exercise') }}" class="waves-effect black-text white btn">Learn more</a>
+    </div>
+    <div class="carousel-item black white-text" href="#one!">
+      <h4>Train in one of our fitness studio</h4>
+      <small>Please continue to follow COVID-19 <a href="https://www.hse.ie/" target="_blank">Public
+          Guidelines.</a></small>
+      <img class="card-img-top"
+        src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2020/12/sculpt-bands-option-2.jpg alt="Workout">
+    </div>
+    <div class="carousel-item green white-text" href="#two!">
+      <p class="white-text"><img class="card-img-top"
+          src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2019/10/BarreChallenge5.jpg alt="Workout"></p>
+    </div>
+    <div class="carousel-item green white-text" href="#three!">
+      <h2></h2>
+      <p class="white-text"></p>
+    </div>
+    <div class="carousel-item blue white-text" href="#four!">
+      <h2></h2>
+      <p class="white-text"></p>
+    </div>
+  </div>
+  <div class="container-fluid" style="background-color: #fff8e1">
+    <div class="row">
+      <div class="col s12 m6">
         <br>
+        <div class="card-panel hoverable #ffffff white">
+          <span class="black-text">
+            <div class="card-panel hoverable">
+              <h4 class="center-align">Healthy Diet</h4>
+              <h5 style="font-family:'roboto,"><img
+                  src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2020/02/Daylesford-Delivered-Ready-To-Serve-food-for-events-783x522.gif
+                  alt="Food Menu"> Dietary guidelines have changed over the years as research becomes
+                more
+                accurate in determining what we should eat to attain optimal health and weight. The strongest
+                evidence to
+                date shows that calories matter, but focusing on food quality is an equally important part of
+                preventing
+                weight gain and promoting weight loss.</h5>
+              <div class="card-action">
+                <a href="{{ url_for('login') }}" class="waves-effect black btn">Learn more</a>
+              </div>
+            </div>
+          </span>
+        </div>
+      </div>
       <div class="row">
-        <h4 class="center-align">Healthy Diet</h4>
-        <div class="column">
+        <div class="col s12 m6">
           <br>
-          <div class="card">
-            <h5>Mediterranean</h5>
-            <br>
-            <!-- Image linked from https://theculturetrip.com/-->
-            <img class="card-img-top" src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2020/02/Daylesford-Delivered-Ready-To-Serve-food-for-events-783x522.gif alt="Food Menu">
-            <br>
-            <a href="recipe.html" target="_blank" class="btn btn-dark">Explore</a>
-          </div>
-        </div>
-        <div class="column">
-          <br>
-          <div class="card">
-            <h5>Paleo</h5>
-            <br>
-            <!-- Image linked from https://theculturetrip.com/-->
-            <img class="card-img-bottom" src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2020/07/rumman-amin-LNn6O_Mt730-unsplash.jpg alt="Food Menu">
-            <a href="login.html" target="_blank" class="btn btn-dark">Explore</a>
-          </div>
-        </div>
-        <div class="column">
-          <br>
-          <div class="card">
-            <h5>Vegan</h5>
-            <br>
-            <!-- Image linked from https://theculturetrip.com/-->
-            <img class="card-img-top" src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2021/09/%C2%A9-Safia-Shakarchi-Deliciously-Ella-Restaurant-37-783x522.jpg alt="Food Menu">
-            <hr>
-            <a href="diets.html" target="_blank" class="btn btn-dark">Explore</a>
-          </div>
-          </div>
-          <br>
-          <div class="row">
-            <div class="col s12 m12">
-              <div class="card-panel hoverable #ffffff white">
-                <span class="black-text">
-                  <div class="card-panel hoverable">
-                    <h5 style="font-family:'roboto,"> Dietary guidelines have changed over the years as research becomes
-                      more
-                      accurate in determining what we should eat to attain optimal health and weight. The strongest
-                      evidence to
-                      date shows that calories matter, but focusing on food quality is an equally important part of
-                      preventing
-                      weight gain and promoting weight loss<a href="{{ url_for('login') }}"> Learn more!</a> </h5>
-                  </div>
-                </span>
-              </div>
-            </div>
-          </div>
-          </div>
-          </div>
-          </div>
-        </div>
-        </div>
-        <div class="container-fluid" style="background-color: #8d6e63;">
-          <br>
-        <div class="row">
-            <h4 class="center-align">Workout Plan</h4>
-            <br>
-            <div class="column">
-              <br>
-              <div class="card">
-                <!-- Image linked from https://theculturetrip.com/-->
-                <img class="card-img-top" src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2021/05/Karve-Club-2.jpg alt="Fitness">
-                <br>
-                <a href="recipe.html" target="_blank" class="btn btn-dark">Explore</a>
-              </div>
-            </div>
-            <div class="column">
-              <br>
-              <div class="card">
-                <!-- Image linked from https://theculturetrip.com/-->
-                <img class="card-img-bottom" src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2021/03/Duco.jpg alt="Fitness">
-                <br>
-                <a href="asia.html" target="_blank" class="btn btn-dark">Explore</a>
-              </div>
-            </div>
-            <div class="column">
-              <br>
-              <div class="card">
-                <!-- Image linked from https://theculturetrip.com/-->
-                <img class="card-img-top" src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2019/03/FLY_Flow_03.jpg alt="Yoga">
-                <br>
-                <a href="australia.html" target="_blank" class="btn btn-dark">Explore</a>
-              </div>
-              </div>
-              <div class="row">
-                <div class="col s12 m8">
-                  <div class="card-panel black">
-                    <h5 class="white-text">If you enjoy the motivating and uplifting environment of group
-                      fitness classes,
-                      Gfit & Wellness of Dublin is at your service. Our elite instructors and personal trainer will
-                      guide you through workouts designed for fitness progress. Our schedule rotates to include all of
-                      your
-                      favorites, such as yoga, muscle toning, weight gain, weight loss, indoor spin/cycling, Pilates,
-                      Cardio,
-                      strength training,
-                      by offering movement modifications that will challenge and accommodate every experience level.
-                      Find
-                      your
-                      next fitness class today.<a href="{{ url_for('login') }}"> Sign Up!</a> </h5>
-                  </div>
-                  </div>
+          <div class="card-panel hoverable #ffffff white">
+            <span class="black-text">
+              <div class="card-panel hoverable">
+                <h4 class="center-align">Workout</h4>
+                <h5 style="font-family:'roboto,"><img
+                    src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2021/03/Duco.jpg alt="Fitness">
+                  If you enjoy the motivating and uplifting environment of group
+                  fitness classes,
+                  Fit Hub of Dublin is at your service. Our elite instructors and personal trainer will
+                  guide you through workouts designed for fitness progress...
+                  by offering movement modifications that will challenge and accommodate every experience level.
+                  Find
+                  your
+                  next fitness class today.</a></h5>
+                <div class="card-action">
+                  <a href="{{ url_for('exercise') }}" class="waves-effect black btn">Learn more</a>
                 </div>
               </div>
-              </div>
-              </div>
-            </div>
-            </div>
+            </span>
           </div>
-            <!-- Media -->  
-            <div class="container-fluid">
-                <div class="col s12 m8 offset-m2 l6 offset-l3">
-                    <div class="card-panel grey lighten-5 z-depth-1">
-                      <div class="row valign-wrapper">
-                        <div class="col s2">
-                          <img src="https://www.countryandtownhouse.co.uk/wp-content/uploads/2021/07/lesly-juarez-1AhGNGKuhR0-unsplash-783x522.jpg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
-                        </div>
-                        <div class="col s10">
-                          <span class="black-text">
-                            Get Fit and wellness has helped me to transform my life.
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  </div>
-    <!-- End of page (footer) is used across all the pages of our website -->
-<div class="container-fluid">
-<footer class="page-footer">
-        <div class="container">
-          <div class="row">
-            <div class="col l6 s12">
-              <h5 class="white-text">Social Media:</h5>
-              <p class="grey-text text-lighten-3">Twitter</p>
-            </div>
-            <div class="col l4 offset-l2 s12">
-              <h5 class="white-text">Company</h5>
-              <ul>
-                <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Contact us</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Terms of service</a</li>
-                <li><a class="grey-text text-lighten-3" href="#!">Privacy policy</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">FAQ</a></li>
-              </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Card Elements -->
+    <div class="container-fluid">
+      <div class="row">
+        <br>
+        <div class="col s12 m6">
+          <div class="collection">
+            <a href="{{ url_for('get_diets') }}" class="collection-item"><span class="new badge green"></span>Recipe</a>
+            <a href="#!" class="collection-item"><span class="new badge black"></span>Nutritionist</a>
+            <a href="#!" class="collection-item"><span class="new badge black"></span>Personal Trainer</a>
+            <a href="#!" class="collection-item"><span class="badge">Coming soon...</span>Sport Apparel</a>
+          </div>
+        </div>
+        <br>
+        <div class="col s12 m6">
+          <div class="card-panel white lighten-5 z-depth-1">
+            <div class="row valign-wrapper">
+              <div class="col s2">
+                <img
+                  src="https://www.countryandtownhouse.co.uk/wp-content/uploads/2021/07/lesly-juarez-1AhGNGKuhR0-unsplash-783x522.jpg"
+                  alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+              </div>
+              <div class="col s10">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="black-text"><em>
+                    "Fit Hub has helped me to transform my life."</em>
+                </span>
+                <h6><strong>Janet, Dublin</strong></h6>
+              </div>
             </div>
           </div>
         </div>
-        <div class="footer-copyright">
-          <div class="container">
-    <div class="container-fluid">
-        <p class="copyright text-muted">Copyright &copy; Get Fit. <span id="copyright"></span> All Rights Reserved.</p>
+        <br>
+      </div>
     </div>
-</footer>
-</div>
+  </div>
+  <div class="container-fluid" style="background-color: #8d6e63;">
+    <br>
+    <div class="row">
+      <h4 class="center-align" style="color:#f1f1f1">Workout Plan</h4>
+      <br>
+      <div class="column">
+        <br>
+        <div class="card">
+          <!-- Image linked from https://theculturetrip.com/-->
+          <img class="card-img-top"
+            src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2021/05/Karve-Club-2.jpg alt="Fitness">
+          <br>
+          <a href="{{ url_for('login') }}" class="waves-effect black btn">Learn more</a>
+        </div>
+      </div>
+      <div class="column">
+        <br>
+        <div class="card">
+          <!-- Image linked from https://theculturetrip.com/-->
+          <img class="card-img-bottom" src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2020/01/At-home-cardio-5.jpg
+            alt="Fitness">
+          <br>
+          <a href="{{ url_for('login') }}" class="waves-effect black btn">Learn more</a>
+        </div>
+      </div>
+      <div class="column">
+        <br>
+        <div class="card">
+          <!-- Image linked from https://theculturetrip.com/-->
+          <img class="card-img-top" src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2019/03/FLY_Flow_03.jpg
+            alt="Yoga">
+          <br>
+          <a href="{{ url_for('login') }}" class="waves-effect black btn">Learn more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  <!-- End of page (footer) is used across all the pages of our website -->
+  <div class="container-fluid">
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Social Media:</h5>
+            <ul>
+              <li><a href="https://www.twitter.com" target="_blank" class="fa fa-twitter">Twitter</a></li>
+              <li><a href="https://www.twitter.com" target="_blank" class="fa fa-twitter">Instagram</a></li>
+              <li><a href="https://www.twitter.com" target="_blank" class="fa fa-twitter">Facebook</a></li>
+            </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Company</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Contact us</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Terms of service</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Privacy policy</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      <div class="container-fluid">
+        <p class="copyright text-muted">Copyright &copy; Fit Hub. <span id="copyright"></span> All Rights Reserved.</p>
+      </div>
+      </footer>
+    </div>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script
+      src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
     {% block scripts %}
     {% endblock %}
     <script>
-        $("#copyright").text(new Date().getFullYear());
+      $("#copyright").text(new Date().getFullYear());
+    </script>
+    <script>
+      $(document).ready(function () {
+        $(".sidenav").sidenav();
+      })
     </script>
 </body>
 
