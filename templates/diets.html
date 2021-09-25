@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-
+<h3 class="black-text text-darken-4 center-align">Diets</h3>
     <ul class="collapsible">
         {% for diet in diets %}
         <li>
-            <div class="collapsible-header white-text light-blue darken-4 text-shadow">
+            <div class="collapsible-header white-text #1b5e20 green darken-4 text-shadow">
                 <i class="fas fa-caret-down"></i>
                 <strong>{{ diet.diet_name }}</strong> : {{ diet.due_date }}
                 {% if diet.is_urgent == "on" %}
@@ -15,6 +15,11 @@
             <div class="collapsible-body">
                 <strong>{{ diet.category_name }}</strong>
                 <p>{{ diet.diet_description }}</p>
+                <p>{{ diet.prep_time }}</p>
+                <p>{{ diet.cook_time }}</p>
+                <p>{{ diet.ingredients }}</p>
+                <p><em>by: {{ diet.created_by }}</em></p>
+                
             </div>
         </li>
         {% endfor %}

@@ -21,8 +21,9 @@
   <header class="masthead"
     style="background-image: url('https://www.countryandtownhouse.co.uk/wp-content/uploads/2019/01/E-by-Equinox-Strength-Floor-Stairwell.jpg')">
     <!-- top navbar -->
-    <nav class="nav-extended text-shadow N/A transparent">
-      <div class=" nav-wrapper">
+    <div class="navbar-fixed">
+    <nav class="nav-extended text-shadow N/A #4a148c purple darken-4">
+      <div class="nav-wrapper">
         <a href="{{ url_for('index') }}" class="brand-logo" style="font-size: 35px;">FIT HUB</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
         <ul class="right hide-on-med-and-down">
@@ -43,6 +44,7 @@
         </ul>
       </div>
     </nav>
+    </div>
     <ul class="sidenav" id="mobile-demo">
       <li><a href="{{ url_for('index') }}">Home</a></li>
       {% if session.user %}
@@ -109,7 +111,7 @@
       <p class="white-text"></p>
     </div>
   </div>
-  <div class="container-fluid" style="background-color: #fff8e1">
+  <div class="container-fluid" style="background-color: #e0e0e0 grey lighten-2">
     <div class="row">
       <div class="col s12 m6">
         <br>
@@ -139,7 +141,7 @@
           <div class="card-panel hoverable #ffffff white">
             <span class="black-text">
               <div class="card-panel hoverable">
-                <h4 class="center-align">Workout</h4>
+                <h4 class="center-align">Exercise</h4>
                 <h5 style="font-family:'roboto,"><img
                     src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2021/03/Duco.jpg alt="Fitness">
                   If you enjoy the motivating and uplifting environment of group
@@ -198,11 +200,10 @@
       </div>
     </div>
   </div>
-  <div class="container-fluid" style="background-color: #8d6e63;">
-    <br>
+  <div class="container-fluid" style="background-color: #e0e0e0 grey lighten-2">
     <div class="row">
-      <h4 class="center-align" style="color:#f1f1f1">Workout Plan</h4>
       <br>
+      <h4 class="center-align" style="color:#000">Workout Plan</h4>
       <div class="column">
         <br>
         <div class="card">
@@ -232,6 +233,9 @@
           <br>
           <a href="{{ url_for('login') }}" class="waves-effect black btn">Learn more</a>
         </div>
+        <br>
+        <br>
+        <br>
       </div>
     </div>
   </div>

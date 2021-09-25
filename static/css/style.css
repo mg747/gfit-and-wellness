@@ -13,24 +13,18 @@ body {
   color: black;
   background-color: whitesmoke;
 }
+html,body {
+  margin:0;
+  padding:0;
+  overflow-x:hidden;
+}
 .text-shadow {
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 .flashes h4 {
   line-height: 2;
 }
-@media screen and (max-width: 943px){
-}
-/* Navigation bar styling */
-.nav {
-  font-weight: bold;
-  font-size: larger;
-  text-align: center;
-}
-.nav, ul li {
-  font-size: larger;
-  float: none;
-}
+/* Header styling */
 .site-heading {
   color: aqua;
   font-family: courier new;
@@ -155,5 +149,5 @@ body {
 }
 /* END OF PAGE Footer */
 .page-footer {
-  background-color: #212124;
+  background-color: #4a148c;
 }

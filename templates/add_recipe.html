@@ -2,7 +2,7 @@
 {% block content %}
 
 <h3 class="black-text text-darken-4 center-align">Add Recipe</h3>
-
+<!-- category selection -->
 <div class="row card-panel grey lighten-5">
     <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
         <div class="row">
@@ -16,6 +16,7 @@
                 </select>
             </div>
         </div>
+        <!-- diet name -->
         <div class="row">
             <div class="input-field col s12">
                 <input id="diet_name" name="diet_name" minlength="5" maxlength="50" type="text" class="validate"
@@ -23,6 +24,7 @@
                 <label for="diet_name">Diet Name</label>
             </div>
         </div>
+        <!-- diet description -->
         <div class="row">
             <div class="input-field col s12">
                 <textarea id="diet_description" name="diet_description" minlength="5" maxlength="200"
@@ -30,24 +32,27 @@
                 <label for="diet_description">Diet Description</label>
             </div>
         </div>
+        <!-- diet prep time -->
         <div class="row">
             <div class="input-field col s12">
-                <textarea id="diet_description" name="diet_description" minlength="5" maxlength="200"
+                <textarea id="diet_prep_time" name="diet_prep_time" minlength="5" maxlength="200"
                     class="materialize-textarea validate" required></textarea>
-                <label for="prep_time">Prep Time</label>
+                <label for="diet_prep_time">Prep Time</label>
             </div>
         </div>
+        <!-- diet cook time -->
         <div class="row">
             <div class="input-field col s12">
-                <input id="due_date" name="due_date" type="text" class="datepicker validate" required>
-                <label for="cook_time">Cook Time</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <textarea id="diet_description" name="diet_description" minlength="5" maxlength="200"
+                <textarea id="diet_cook_time" name="diet_cook_time" minlength="5" maxlength="200"
                     class="materialize-textarea validate" required></textarea>
-                <label for="ingredients">Ingredients</label>
+                <label for="diet_cook_time">Cook Time</label>
+        </div>
+        <!-- ingredients  -->
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="diet_ingredients" name="diet_ingredients" minlength="5" maxlength="400"
+                    class="materialize-textarea validate" required></textarea>
+                <label for="diet_ingredients">Ingredients</label>
             </div>
         </div>
         <!-- submit button -->

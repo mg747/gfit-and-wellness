@@ -59,7 +59,11 @@ def add_recipe():
         diet = {
             "category_name": request.form.get("category_name"),
             "diet_name": request.form.get("diet_name"),
-            "diet_description": request.form.get("diet_description"),
+            "diet_description": request.form.getlist("diet_description"),
+            "prep_time": request.form.get("prep_time"),
+            "cook_time": request.form.get("cook_time"),
+            "cook_time": request.form.get("cook_time"),
+            "created_by": session["user"]
         }
         mongo.db.diets.insert_one(diet)
         flash("New Diet Added")
