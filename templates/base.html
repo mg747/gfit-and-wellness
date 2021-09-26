@@ -22,30 +22,30 @@
     style="background-image: url('https://www.countryandtownhouse.co.uk/wp-content/uploads/2019/01/E-by-Equinox-Strength-Floor-Stairwell.jpg')">
     <!-- top navbar -->
     <div class="navbar-fixed">
-    <nav class="nav-extended text-shadow N/A #4a148c purple darken-4">
-      <div class="nav-wrapper">
-        <a href="{{ url_for('index') }}" class="brand-logo" style="font-size: 35px;">FIT HUB</a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="{{ url_for('index') }}">Home</a></li>
-          {% if session.user %}
-          <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-          <li><a href="{{ url_for('get_diets') }}">Diet</a></li>
-          <li><a href="{{ url_for('add_recipe') }}">Recipe</a></li>
-          <li><a href="{{ url_for('exercise') }}">Exercise</a></li>
-          {% if session.user|lower == "admin"|lower %}
-          <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
-          {% endif %}
-          <li><a href="{{ url_for('logout') }}">Log out</a></li>
-          {% else %}
-          <li><a href="{{ url_for('login') }}">Log In</a></li>
-          <li><a href="{{ url_for('register') }}">Register</a></li>
-          {% endif %}
-        </ul>
-      </div>
-    </nav>
+      <nav class="nav-extended text-shadow N/A #4a148c purple darken-4">
+        <div class="nav-wrapper">
+          <a href="{{ url_for('index') }}" class="brand-logo" style="font-size: 35px;">FEAT HUB</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            {% if session.user %}
+            <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+            <li><a href="{{ url_for('get_diets') }}">Diet</a></li>
+            <li><a href="{{ url_for('add_recipe') }}">Recipe</a></li>
+            <li><a href="{{ url_for('exercise') }}">Exercise</a></li>
+            {% if session.user|lower == "admin"|lower %}
+            <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
+            {% endif %}
+            <li><a href="{{ url_for('logout') }}">Log out</a></li>
+            {% else %}
+            <li><a href="{{ url_for('login') }}">Log In</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </nav>
     </div>
-    <ul class="sidenav" id="mobile-demo">
+    <ul class="sidenav" id="mobile">
       <li><a href="{{ url_for('index') }}">Home</a></li>
       {% if session.user %}
       <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
@@ -146,7 +146,7 @@
                     src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2021/03/Duco.jpg alt="Fitness">
                   If you enjoy the motivating and uplifting environment of group
                   fitness classes,
-                  Fit Hub of Dublin is at your service. Our elite instructors and personal trainer will
+                  Feat Hub of Dublin is at your service. Our elite instructors and personal trainer will
                   guide you through workouts designed for fitness progress...
                   by offering movement modifications that will challenge and accommodate every experience level.
                   Find
@@ -167,7 +167,7 @@
         <br>
         <div class="col s12 m6">
           <div class="collection">
-            <a href="{{ url_for('get_diets') }}" class="collection-item"><span class="new badge green"></span>Recipe</a>
+            <a href="{{ url_for('login') }}" class="collection-item"><span class="new badge green"></span>Recipe</a>
             <a href="#!" class="collection-item"><span class="new badge black"></span>Nutritionist</a>
             <a href="#!" class="collection-item"><span class="new badge black"></span>Personal Trainer</a>
             <a href="#!" class="collection-item"><span class="badge">Coming soon...</span>Sport Apparel</a>
@@ -189,7 +189,7 @@
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star"></span>
                 <span class="black-text"><em>
-                    "Fit Hub has helped me to transform my life."</em>
+                    "Feat Hub has helped me to transform my life."</em>
                 </span>
                 <h6><strong>Janet, Dublin</strong></h6>
               </div>
@@ -218,8 +218,8 @@
         <br>
         <div class="card">
           <!-- Image linked from https://theculturetrip.com/-->
-          <img class="card-img-bottom" src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2020/01/At-home-cardio-5.jpg
-            alt="Fitness">
+          <img class="card-img-bottom"
+            src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2020/01/At-home-cardio-5.jpg alt="Fitness">
           <br>
           <a href="{{ url_for('login') }}" class="waves-effect black btn">Learn more</a>
         </div>
@@ -248,48 +248,51 @@
       <div class="container">
         <div class="row">
           <div class="col l6 s12">
-            <h5 class="white-text">Social Media:</h5>
+            <h5 class="white-text">Social Media</h5>
             <ul>
-              <li><a href="https://www.twitter.com" target="_blank" class="fa fa-twitter">Twitter</a></li>
-              <li><a href="https://www.twitter.com" target="_blank" class="fa fa-twitter">Instagram</a></li>
-              <li><a href="https://www.twitter.com" target="_blank" class="fa fa-twitter">Facebook</a></li>
-            </div>
-        <div class="col l4 offset-l2 s12">
-          <h5 class="white-text">Company</h5>
-          <ul>
-            <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
-            <li><a class="grey-text text-lighten-3" href="{{ url_for('contact') }}">Contact us</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Terms of service</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Privacy policy</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">FAQ</a></li>
-          </ul>
+              <li>
+                <a style="color: #2196f3;" href="https://www.facebook.com.com" target="_blank"><i
+                  class="fab fa-facebook-f fa-lg"> Facebook</i></a>
+              </li>
+                <a style="color: #ffffff;" href="https://www.twitter.com" target="_blank"><i
+                    class="fab fa-twitter fa-lg"> Twitter</i></a><br>
+                <a style="color: #f50057;" href="https://www.instagram.com" target="_blank"><i
+                    class="fab fa-instagram fa-lg"> Instagram</i></a>
+            </ul>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Company</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="{{ url_for('about') }}">About</a></li>
+              <li><a class="grey-text text-lighten-3" href="{{ url_for('contact') }}">Contact us</a></li>
+            </ul>
+          </div>
         </div>
       </div>
+      <div class="footer-copyright">
+        <div class="container">
+          <div class="container-fluid">
+            <p class="copyright text-muted">Copyright &copy; Feat Hub. <span id="copyright"></span> All Rights Reserved.
+            </p>
+          </div>
+    </footer>
   </div>
-  <div class="footer-copyright">
-    <div class="container">
-      <div class="container-fluid">
-        <p class="copyright text-muted">Copyright &copy; Fit Hub. <span id="copyright"></span> All Rights Reserved.</p>
-      </div>
-      </footer>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-    <script
-      src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
-    </script>
-    {% block scripts %}
-    {% endblock %}
-    <script>
-      $("#copyright").text(new Date().getFullYear());
-    </script>
-    <script>
-      $(document).ready(function () {
-        $(".sidenav").sidenav();
-      })
-    </script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+  </script>
+  {% block scripts %}
+  {% endblock %}
+  <script>
+    $("#copyright").text(new Date().getFullYear());
+  </script>
+  <script>
+    $(document).ready(function () {
+      $(".sidenav").sidenav();
+    })
+  </script>
 </body>
 
 </html>

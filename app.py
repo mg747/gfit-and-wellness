@@ -195,6 +195,12 @@ def delete_category(category_id):
     flash("Category Successfully Deleted")
     return redirect(url_for("get_categories"))
 
+# About Section
+@app.route("/about")
+def about():
+    about = mongo.db.about.find()
+    return render_template("about.html", about=about)
+
 
 # Contact Section
 @app.route("/contact")
