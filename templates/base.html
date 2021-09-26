@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,11 +15,10 @@
   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 </head>
-
 <body>
   <header class="masthead"
-    style="background-image: url('https://www.countryandtownhouse.co.uk/wp-content/uploads/2019/01/E-by-Equinox-Strength-Floor-Stairwell.jpg')">
-    <!-- top navbar -->
+    style="background-color: #000000">
+    <!-- Top Navbar -->
     <div class="navbar-fixed">
       <nav class="nav-extended text-shadow N/A #4a148c purple darken-4">
         <div class="nav-wrapper">
@@ -45,7 +43,8 @@
         </div>
       </nav>
     </div>
-    <ul class="sidenav" id="mobile">
+    <!-- Mobile Navbar -->
+    <ul class="sidenav" id="mobile-demo">
       <li><a href="{{ url_for('index') }}">Home</a></li>
       {% if session.user %}
       <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
@@ -65,7 +64,7 @@
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="col-lg-8 col-md-5 mx-auto">
           <div class="site-heading" style="font-size: 35px;">
             <p class="center-align">Living healthy!</p>
           </div>
@@ -74,7 +73,7 @@
     </div>
   </header>
   <section>
-    <!-- flash messages -->
+    <!-- Flash Messages -->
     {% with messages = get_flashed_messages() %}
     {% if messages %}
     {% for message in messages %}
@@ -87,31 +86,44 @@
   </section>
   {% block content %}
   {% endblock %}
+  <!-- Image Carousel -->
   <div class="carousel carousel-slider center">
     <div class="carousel-fixed-item center">
-      <a href="{{ url_for('exercise') }}" class="waves-effect black-text white btn">Learn more</a>
+      <a href="{{ url_for('login') }}" class="waves-effect black-text white btn">Learn more</a>
     </div>
     <div class="carousel-item black white-text" href="#one!">
       <h4>Train in one of our fitness studio</h4>
       <small>Please continue to follow COVID-19 <a href="https://www.hse.ie/" target="_blank">Public
           Guidelines.</a></small>
+      <!-- Image linked from https://www.countryandtownhouse.co.uk/ -->
       <img class="card-img-top"
         src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2020/12/sculpt-bands-option-2.jpg alt="Workout">
     </div>
-    <div class="carousel-item green white-text" href="#two!">
+    <div class="carousel-item black white-text" href="#two!">
+      <h5>Fruits & vegetables</h5>
+      <!-- Image linked from https://www.countryandtownhouse.co.uk/ -->
       <p class="white-text"><img class="card-img-top"
-          src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2019/10/BarreChallenge5.jpg alt="Workout"></p>
+          src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2020/01/ja-ma-gOUx23DNks-unsplash-782x522.jpg
+          alt="food"></p>
     </div>
-    <div class="carousel-item green white-text" href="#three!">
-      <h2></h2>
+    <div class="carousel-item black white-text" href="#three!">
+      <h5>Train like a champion</h5>
+      <!-- Image linked from https://theglossarymagazine.com/ -->
+      <p class="white-text"><img class="card-img-top"
+          src=https://cdn-bapon.nitrocdn.com/ckYvjxplFZbThUurOBJHjSbcErmBgJUm/assets/static/optimized/rev-f2c50af/wp-content/uploads/2020/08/workshop-gymnasiums.jpg
+          alt="workout"></p>
       <p class="white-text"></p>
     </div>
-    <div class="carousel-item blue white-text" href="#four!">
+    <div class="carousel-item black white-text" href="#four!">
+      <h5>Nutritious food</h5>
+      <!-- Image linked from https://www.bbc.com/future/article/20180126-the-100-most-nutritious-foods -->
+      <p class="white-text"><img class="card-img-top" src=https://ychef.files.bbci.co.uk/1600x900/p05xm061.webp
+          alt="food"></p>
       <h2></h2>
       <p class="white-text"></p>
     </div>
   </div>
-  <div class="container-fluid" style="background-color: #e0e0e0 grey lighten-2">
+  <div class="container-fluid" style="background-color: #000000">
     <div class="row">
       <div class="col s12 m6">
         <br>
@@ -119,6 +131,7 @@
           <span class="black-text">
             <div class="card-panel hoverable">
               <h4 class="center-align">Healthy Diet</h4>
+              <!-- Image linked from https://www.countryandtownhouse.co.uk/ -->
               <h5 style="font-family:'roboto,"><img
                   src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2020/02/Daylesford-Delivered-Ready-To-Serve-food-for-events-783x522.gif
                   alt="Food Menu"> Dietary guidelines have changed over the years as research becomes
@@ -142,6 +155,7 @@
             <span class="black-text">
               <div class="card-panel hoverable">
                 <h4 class="center-align">Exercise</h4>
+                <!-- Image linked from https://www.countryandtownhouse.co.uk/ -->
                 <h5 style="font-family:'roboto,"><img
                     src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2021/03/Duco.jpg alt="Fitness">
                   If you enjoy the motivating and uplifting environment of group
@@ -153,7 +167,7 @@
                   your
                   next fitness class today.</a></h5>
                 <div class="card-action">
-                  <a href="{{ url_for('exercise') }}" class="waves-effect black btn">Learn more</a>
+                  <a href="{{ url_for('login') }}" class="waves-effect black btn">Learn more</a>
                 </div>
               </div>
             </span>
@@ -168,8 +182,10 @@
         <div class="col s12 m6">
           <div class="collection">
             <a href="{{ url_for('login') }}" class="collection-item"><span class="new badge green"></span>Recipe</a>
-            <a href="#!" class="collection-item"><span class="new badge black"></span>Nutritionist</a>
-            <a href="#!" class="collection-item"><span class="new badge black"></span>Personal Trainer</a>
+            <a href="https://www.mindbodyonline.com/" target="_blank" class="collection-item"><span
+                class="new badge black"></span>Nutritionist</a>
+            <a href="https://www.mindbodyonline.com/" target="_blank" class="collection-item"><span
+                class="new badge black"></span>Personal Trainer</a>
             <a href="#!" class="collection-item"><span class="badge">Coming soon...</span>Sport Apparel</a>
           </div>
         </div>
@@ -178,6 +194,7 @@
           <div class="card-panel white lighten-5 z-depth-1">
             <div class="row valign-wrapper">
               <div class="col s2">
+                <!-- Image linked from https://www.countryandtownhouse.co.uk/ -->
                 <img
                   src="https://www.countryandtownhouse.co.uk/wp-content/uploads/2021/07/lesly-juarez-1AhGNGKuhR0-unsplash-783x522.jpg"
                   alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
@@ -200,38 +217,38 @@
       </div>
     </div>
   </div>
-  <div class="container-fluid" style="background-color: #e0e0e0 grey lighten-2">
+  <div class="container-fluid" style="background-color: #000000">
     <div class="row">
       <br>
-      <h4 class="center-align" style="color:#000">Workout Plan</h4>
+      <h4 class="center-align" style="color:#ffffff">Workout Plan</h4>
       <div class="column">
         <br>
         <div class="card">
-          <!-- Image linked from https://theculturetrip.com/-->
+          <!-- Image linked from https://www.countryandtownhouse.co.uk/ -->
           <img class="card-img-top"
             src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2021/05/Karve-Club-2.jpg alt="Fitness">
           <br>
-          <a href="{{ url_for('login') }}" class="waves-effect black btn">Learn more</a>
+          <a href="https://www.mindbodyonline.com/" target="_blank" class="waves-effect black btn">Learn more</a>
         </div>
       </div>
       <div class="column">
         <br>
         <div class="card">
-          <!-- Image linked from https://theculturetrip.com/-->
+          <!-- Image linked from https://www.countryandtownhouse.co.uk/ -->
           <img class="card-img-bottom"
             src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2020/01/At-home-cardio-5.jpg alt="Fitness">
           <br>
-          <a href="{{ url_for('login') }}" class="waves-effect black btn">Learn more</a>
+          <a href="https://www.mindbodyonline.com/" target="_blank" class="waves-effect black btn">Learn more</a>
         </div>
       </div>
       <div class="column">
         <br>
         <div class="card">
-          <!-- Image linked from https://theculturetrip.com/-->
+          <!-- Image linked from https://www.countryandtownhouse.co.uk/ -->
           <img class="card-img-top" src=https://www.countryandtownhouse.co.uk/wp-content/uploads/2019/03/FLY_Flow_03.jpg
             alt="Yoga">
           <br>
-          <a href="{{ url_for('login') }}" class="waves-effect black btn">Learn more</a>
+          <a href="https://www.mindbodyonline.com/" target="_blank" class="waves-effect black btn">Learn more</a>
         </div>
         <br>
         <br>
@@ -242,7 +259,7 @@
   </div>
   </div>
   </div>
-  <!-- End of page (footer) is used across all the pages of our website -->
+  <!-- End of page (footer) -->
   <div class="container-fluid">
     <footer class="page-footer">
       <div class="container">
@@ -252,12 +269,16 @@
             <ul>
               <li>
                 <a style="color: #2196f3;" href="https://www.facebook.com.com" target="_blank"><i
-                  class="fab fa-facebook-f fa-lg"> Facebook</i></a>
+                    class="fab fa-facebook-f fa-lg"> facebook</i></a>
               </li>
+              <li>
                 <a style="color: #ffffff;" href="https://www.twitter.com" target="_blank"><i
-                    class="fab fa-twitter fa-lg"> Twitter</i></a><br>
+                    class="fab fa-twitter fa-lg"> twitter</i></a>
+              </li>
+              <li>
                 <a style="color: #f50057;" href="https://www.instagram.com" target="_blank"><i
-                    class="fab fa-instagram fa-lg"> Instagram</i></a>
+                    class="fab fa-instagram fa-lg"> instagram</i></a>
+              </li>
             </ul>
           </div>
           <div class="col l4 offset-l2 s12">
@@ -294,5 +315,4 @@
     })
   </script>
 </body>
-
 </html>

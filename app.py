@@ -56,7 +56,7 @@ def search():
 def add_recipe():
     # Save Recipe    
     if request.method == "POST":
-        diet = {
+        submit = {
             "category_name": request.form.get("category_name"),
             "diet_name": request.form.get("diet_name"),
             "diet_description": request.form.getlist("diet_description"),
@@ -77,18 +77,6 @@ def add_recipe():
 @app.route("/exercise")
 def exercise():
     return render_template("exercise.html")
-
-
-# Lifestyle Section
-@app.route("/lifestyle")
-def lifestyle():
-    return render_template("lifestyle.html")
-
-
-# Personal Trainer
-@app.route("/personal-trainer")
-def personal_trainer():
-    return render_template("personal-trainer.html")
 
 
 @app.route("/logout")
@@ -153,6 +141,7 @@ def register():
 
     return render_template("register.html")
 
+
 # Manage Categories
 @app.route("/get_categories")
 def get_categories():
@@ -188,12 +177,14 @@ def edit_category(category_id):
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
     return render_template("edit_category.html", category=category)
 
+
 # Delete Category
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
     mongo.db.categories.remove({"_id": ObjectId(category_id)})
     flash("Category Successfully Deleted")
     return redirect(url_for("get_categories"))
+
 
 # About Section
 @app.route("/about")
