@@ -3,7 +3,7 @@
 [View the live project here.](https://mg747.github.io/gfit-and-wellness/)
 
 ![Site Screenshot](static/images/websitescreenshot.png)
-#### Site Name: Fit Hub
+#### Site Name: FEAT Hub
 #### Goal : Fitness, Healthy Diet and Lifestyle
 
 ## Contents
@@ -64,52 +64,22 @@
 
 -   ### Design
     -   #### Colour Scheme
-        -   The two main colours used are Code Insititue black, and white.
+        -   The two main colours used are Code Institute black, and white.
     -   #### Typography
         -   The Roboto font is the main font used throughout the whole website with Helvetica and Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly. Roboto is a clean font used frequently in programming, so it is both attractive and appropriate.
     -   #### Imagery
-        -   Imagery is important. The Images used across the site and in cards wwere designed to be striking and to catch the user's attention. It also has a modern, energetic aesthetic.
+        -   Imagery is important. The Images used across the site and in cards were designed to be striking and to catch the user's attention. It also has a modern, energetic aesthetic.
 
 *   ## Wireframes
 
 -   #### Desktop View
 
 #### Home Page Skeleton Plane
-![Home Page Skeleton Plane](static/images/gfithomepagewireframe.png)
-
-#### Diet Page Skeleton Plane
-![diet Page Skeleton Plane]
-
-#### Recipe Page Skeleton Plane
-![Recipe Page Skeleton Plane]
-
-#### Exercise Page Skeleton Plane
-![Exercise Page Skeleton Plane]
-
-#### About Page Skeleton Plane
-![About Page Skeleton Plane]
-
-#### Contact Page Skeleton Plane
-![Contact Page Skeleton Plane]
+![Home Page Skeleton Plane](static/images/homepagescreenshot.png)
 
 -   #### Mobile View
 #### Home Page Skeleton Plane
-![Home Page Skeleton Plane]
-
-#### Diet Page Skeleton Plane
-![Diet Page Skeleton Plane]
-
-#### Recipe Page Skeleton Plane
-![Recipe Page Skeleton Plane]
-
-#### Exercise Page Skeleton Plane
-![Exercise Page Skeleton Plane]
-
-#### About Page Skeleton Plane
-![About Page Skeleton Plane]
-
-#### Contact Page Skeleton Plane
-![Contact Page Skeleton Plane]
+![Home Page Skeleton Plane](static/images/mobilehomepagescreenshot.png)
 
 ## Features
 
@@ -135,7 +105,7 @@
 3. [Font Awesome 5.13.1:](https://fontawesome.com/)
     - Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.
 4. [jQuery:](https://jquery.com/)
-    - jQuery came with Bootstrap to make the navbar responsive but was also used for the smooth scroll function in JavaScript.
+    - jQuery came with Materialize to make the navbar responsive.
 5. [Git](https://git-scm.com/)
     - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 6. [GitHub:](https://github.com/)
@@ -179,34 +149,32 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
     1. As a Returning Visitor, I want to see information about exercise and healthy food recipes.
 
-      1. This information is on the home page of the site or the user can access it through the navbar menu link for exercise 
+      1. This information is on the home page of the site underneath the image carousel or the user can access it through the navbar menu link for diet or exercise. ![](static/images/screenshot4.png) 
     
     2. As a Returning Visitor, I want to find the best way to get in contact with the site owner with any questions I may have.
 
-      1. Returning Visitor can send a message to the site owner through contact link on the navbar on every page of the site.
+      1. Returning Visitor can send a message to the site owner through contact link on the footer of the site.
 
 -   #### Frequent User Goals
 
     1. As a Frequent User, I want to see updates about any change or news on the site.
 
-      1. This information can be found on the home page of the site.
+      1. Frequent User can easily find this information on the home page of the site, underneath exercise section. ![](static/images/screenshot3.png)
 
     2. As a Frequent User, I want to check to see if there are any new blog posts.
 
-      1. The social media links is on the navbar on every page of the site.
+      1. The social media links is on the footer with links to the site blog and social post.
 
 ### Further Testing
 
 -   The Website was tested on Google Chrome, Mozilla Firefox, Microsoft Edge and Safari browsers.
--   The website was viewed on a variety of devices such as Desktop, Laptop, iPhone SE, iPhone 12 and Samsung Galaxy A5 and iPadPro.
--   There is social media links on the navbar on every page of the site.
--   Heroku
+-   The website was viewed on a variety of devices such as Desktop, Laptop, iPhone SE, iPhone 12, Samsung Galaxy A5, and iPadPro.
 -   A large amount of testing was done to ensure that all pages were linking correctly
 -   Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
 
 ### Known Bugs
 
--   No known bug at the time I tested the site/app. I will continue to debug and check to ensure that the site is working efficiently. 
+-   No known bug at the time I tested the site/app. I will continue to debug and check to ensure that the site is working efficiently. Although w3c markup validator shows syntax error message because of Jinja URL links used in code.  
 
 ## Deployment
 
@@ -260,7 +228,7 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 ### Code
 
--   Codes were copied and modified from the Interactive Backend Develeopment Mini Project of the course.
+-   Codes were copied and modified from the Interactive Backend Develeopment Mini Project lessons of the course.
 
 -   Materialize template was used throughout the project mainly to make site responsive using the [materialize 1.0.0](https://materializecss.com/)
 
@@ -270,11 +238,11 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 ### Media
 
--   All Images belongs to the copyright owner /or the website mentioned in code comments.
+-   All Images belongs to the copyright owner or the website mentioned in code comments.
 
 ### Acknowledgements
 
--   My Mentor Dick Vlaanderen for his helpful guidiance and comments.
+-   My Mentor Dick Vlaanderen. Claire Lally and Gerard Mcbride of UCD and Code Institute for their helpful guidiance and comments.
 
 -   Tutor support at Code Institute for their support.
 

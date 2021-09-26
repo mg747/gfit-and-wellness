@@ -56,7 +56,7 @@ def search():
 def add_recipe():
     # Save Recipe    
     if request.method == "POST":
-        submit = {
+        diet = {
             "category_name": request.form.get("category_name"),
             "diet_name": request.form.get("diet_name"),
             "diet_description": request.form.getlist("diet_description"),
@@ -71,6 +71,30 @@ def add_recipe():
     else:
         categories = mongo.db.categories.find().sort("category_name", 1)
         return render_template("add_recipe.html", categories=categories)
+
+
+
+# Edit Recipe
+@app.route("/add_recipe/<recipe_id>", methods=["GET", "POST"])
+def edit_recipe():
+    # Save Recipe    
+    if request.method == "POST":
+        submit = {
+            "category_name": request.form.get("category_name"),
+            "diet_name": request.form.get("diet_name"),
+            "diet_description": request.form.getlist("diet_description"),
+            "prep_time": request.form.get("prep_time"),
+            "cook_time": request.form.get("cook_time"),
+            "cook_time": request.form.get("cook_time"),
+            "created_by": session["user"]
+        }
+        mongo.db.diets.update_one({"_id": ObjectId(recipe_id)}, submit)
+        flash("Diet Successfully Updated")
+        return redirect(url_for("get_diets"))
+
+    task = mongo.db.diets.find_one({"_id": ObjectId(recipe_id)})
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("edit_recipe.html", recipe=recipe, categories=categories)    
 
 
 # Exercise Section
