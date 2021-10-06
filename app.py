@@ -62,7 +62,7 @@ def add_recipe():
             "diet_description": request.form.getlist("diet_description"),
             "prep_time": request.form.get("prep_time"),
             "cook_time": request.form.get("cook_time"),
-            "cook_time": request.form.get("cook_time"),
+            "ingredients": request.form.get("ingredients"),
             "created_by": session["user"]
         }
         mongo.db.diets.insert_one(diet)
@@ -85,14 +85,14 @@ def edit_recipe():
             "diet_description": request.form.getlist("diet_description"),
             "prep_time": request.form.get("prep_time"),
             "cook_time": request.form.get("cook_time"),
-            "cook_time": request.form.get("cook_time"),
+            "ingredients": request.form.get("ingredients"),
             "created_by": session["user"]
         }
         mongo.db.diets.update_one({"_id": ObjectId(recipe_id)}, submit)
         flash("Diet Successfully Updated")
         return redirect(url_for("get_diets"))
 
-    task = mongo.db.diets.find_one({"_id": ObjectId(recipe_id)})
+    diets = mongo.db.diets.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_recipe.html", recipe=recipe, categories=categories)    
 
